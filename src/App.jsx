@@ -138,7 +138,6 @@ function App() {
               'Solar System',
               'Kitchen Accessories',
               'Security System',
-              'Swimming Pool',
               'Gym',
               'Park',
               'Water Filtration System',
