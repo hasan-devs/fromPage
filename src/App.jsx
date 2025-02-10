@@ -215,6 +215,7 @@ function App() {
         </button>
       </form>
 
+          <h3 style={styles.heading}>Thank you for your interest in Hashoo Properties (PVT )Limited!</h3>
       {/* Footer */}
       <footer style={styles.footer}>
         <h3 style={styles.footerHeading}>FOR BOOKING & INFORMATION</h3>
