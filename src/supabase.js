@@ -1,0 +1,2 @@
+// const supabaseUrl = 'https://kxxapucmizjwjcutxiav.supabase.co';
+// const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt4eGFwdWNtaXpqd2pjdXR4aWF2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc3NDEyMDQsImV4cCI6MjA1MzMxNzIwNH0.Y-QLqVk4EQb87T6bl7EMwMjQlqb6lBUsu13UzmjLw0g';

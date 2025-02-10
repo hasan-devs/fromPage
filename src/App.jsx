@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { createClient } from '@supabase/supabase-js';
@@ -51,15 +51,15 @@ function App() {
         {
           name: data.name,
           email: data.email,
-          phone_number: data.phoneNumber,
-          house_type: data.houseType,
+          phoneNumber: data.phoneNumber,
+          houseType: data.houseType,
           bedrooms: data.bedrooms,
           amenities: data.amenities,
           budget: data.budget,
-          payment_preference: data.paymentPreference,
-          possession_timeline: data.possessionTimeline,
+          paymentPreference: data.paymentPreference,
+          possessionTimeline: data.possessionTimeline,
         },
-      ]).select();
+      ]);
 
       if (error) throw error;
 
@@ -72,118 +72,122 @@ function App() {
   };
 
   return (
-    <div style={{ padding: '20px', maxWidth: '500px', margin: 'auto' }}>
-      <h1>House Inquiry Form</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
+    <div style={styles.container}>
+      <h1 style={styles.heading}>House Inquiry Form</h1>
+      <form onSubmit={handleSubmit(onSubmit)} style={styles.form}>
         {/* Name */}
-        <div>
-          <label>Name</label>
-          <input {...register('name')} />
-          {errors.name && <p style={{ color: 'red' }}>{errors.name.message}</p>}
+        <div style={styles.formGroup}>
+          <label style={styles.label}>Name</label>
+          <input {...register('name')} style={styles.input} />
+          {errors.name && <p style={styles.error}>{errors.name.message}</p>}
         </div>
 
         {/* Email */}
-        <div>
-          <label>Email</label>
-          <input {...register('email')} />
-          {errors.email && <p style={{ color: 'red' }}>{errors.email.message}</p>}
+        <div style={styles.formGroup}>
+          <label style={styles.label}>Email</label>
+          <input {...register('email')} style={styles.input} />
+          {errors.email && <p style={styles.error}>{errors.email.message}</p>}
         </div>
 
         {/* Phone Number */}
-        <div>
-          <label>Phone Number</label>
-          <input {...register('phoneNumber')} />
+        <div style={styles.formGroup}>
+          <label style={styles.label}>Phone Number</label>
+          <input {...register('phoneNumber')} style={styles.input} />
           {errors.phoneNumber && (
-            <p style={{ color: 'red' }}>{errors.phoneNumber.message}</p>
+            <p style={styles.error}>{errors.phoneNumber.message}</p>
           )}
         </div>
 
         {/* Type of House */}
-        <div>
-          <label>Type of House</label>
-          <select {...register('houseType')}>
+        <div style={styles.formGroup}>
+          <label style={styles.label}>Type of House</label>
+          <select {...register('houseType')} style={styles.input}>
             <option value="">Select</option>
             <option value="villa-with-basement">Villa (with basement)</option>
             <option value="villa-without-basement">Villa (without basement)</option>
           </select>
           {errors.houseType && (
-            <p style={{ color: 'red' }}>{errors.houseType.message}</p>
+            <p style={styles.error}>{errors.houseType.message}</p>
           )}
         </div>
 
         {/* Number of Bedrooms */}
-        <div>
-          <label>Number of Bedrooms</label>
-          <input type="number" {...register('bedrooms')} />
+        <div style={styles.formGroup}>
+          <label style={styles.label}>Number of Bedrooms</label>
+          <input type="number" {...register('bedrooms')} style={styles.input} />
           {errors.bedrooms && (
-            <p style={{ color: 'red' }}>{errors.bedrooms.message}</p>
+            <p style={styles.error}>{errors.bedrooms.message}</p>
           )}
         </div>
 
         {/* Amenities */}
-        <div>
-          <label>Amenities (check all that apply)</label>
-          {[
-            'Solar System',
-            'Kitchen Accessories',
-            'Security System',
-            'Swimming Pool',
-            'Gym',
-            'Park',
-            'Water Filtration System',
-            'Other',
-          ].map((amenity) => (
-            <div key={amenity}>
-              <input
-                type="checkbox"
-                value={amenity}
-                {...register('amenities')}
-              />
-              {amenity}
-            </div>
-          ))}
+        <div style={styles.formGroup}>
+          <label style={styles.label}>Amenities (check all that apply)</label>
+          <div style={styles.checkboxGroup}>
+            {[
+              'Solar System',
+              'Kitchen Accessories',
+              'Security System',
+              'Swimming Pool',
+              'Gym',
+              'Park',
+              'Water Filtration System',
+              'Other',
+            ].map((amenity) => (
+              <div key={amenity} style={styles.checkboxItem}>
+                <input
+                  type="checkbox"
+                  value={amenity}
+                  {...register('amenities')}
+                />
+                <span>{amenity}</span>
+              </div>
+            ))}
+          </div>
           {errors.amenities && (
-            <p style={{ color: 'red' }}>{errors.amenities.message}</p>
+            <p style={styles.error}>{errors.amenities.message}</p>
           )}
         </div>
 
         {/* Budget */}
-        <div>
-          <label>Budget</label>
-          <input type="number" {...register('budget')} />
+        <div style={styles.formGroup}>
+          <label style={styles.label}>Budget</label>
+          <input type="number" {...register('budget')} style={styles.input} />
           {errors.budget && (
-            <p style={{ color: 'red' }}>{errors.budget.message}</p>
+            <p style={styles.error}>{errors.budget.message}</p>
           )}
         </div>
 
         {/* Payment Preference */}
-        <div>
-          <label>Payment Preference</label>
-          <div>
-            <input
-              type="radio"
-              value="lump-sum"
-              {...register('paymentPreference')}
-            />
-            Lump Sum
-          </div>
-          <div>
-            <input
-              type="radio"
-              value="installments"
-              {...register('paymentPreference')}
-            />
-            Installments
+        <div style={styles.formGroup}>
+          <label style={styles.label}>Payment Preference</label>
+          <div style={styles.radioGroup}>
+            <div style={styles.radioItem}>
+              <input
+                type="radio"
+                value="lump-sum"
+                {...register('paymentPreference')}
+              />
+              <span>Lump Sum</span>
+            </div>
+            <div style={styles.radioItem}>
+              <input
+                type="radio"
+                value="installments"
+                {...register('paymentPreference')}
+              />
+              <span>Installments</span>
+            </div>
           </div>
           {errors.paymentPreference && (
-            <p style={{ color: 'red' }}>{errors.paymentPreference.message}</p>
+            <p style={styles.error}>{errors.paymentPreference.message}</p>
           )}
         </div>
 
         {/* Preferred Possession Timeline */}
-        <div>
-          <label>Preferred Possession Timeline</label>
-          <select {...register('possessionTimeline')}>
+        <div style={styles.formGroup}>
+          <label style={styles.label}>Preferred Possession Timeline</label>
+          <select {...register('possessionTimeline')} style={styles.input}>
             <option value="">Select</option>
             {[1, 2, 3, 4, 5].map((year) => (
               <option key={year} value={year}>
@@ -192,15 +196,85 @@ function App() {
             ))}
           </select>
           {errors.possessionTimeline && (
-            <p style={{ color: 'red' }}>{errors.possessionTimeline.message}</p>
+            <p style={styles.error}>{errors.possessionTimeline.message}</p>
           )}
         </div>
 
         {/* Submit Button */}
-        <button type="submit">Submit</button>
+        <button type="submit" style={styles.button}>
+          Submit
+        </button>
       </form>
     </div>
   );
 }
+
+// Responsive styles
+const styles = {
+  container: {
+    padding: '20px',
+    maxWidth: '800px',
+    margin: 'auto',
+    fontFamily: 'Arial, sans-serif',
+  },
+  heading: {
+    textAlign: 'center',
+    fontSize: '2rem',
+    marginBottom: '20px',
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '15px',
+  },
+  formGroup: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '5px',
+  },
+  label: {
+    fontWeight: 'bold',
+    fontSize: '1rem',
+  },
+  input: {
+    padding: '10px',
+    fontSize: '1rem',
+    borderRadius: '5px',
+    border: '1px solid #ccc',
+  },
+  checkboxGroup: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '10px',
+  },
+  checkboxItem: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '5px',
+  },
+  radioGroup: {
+    display: 'flex',
+    gap: '15px',
+  },
+  radioItem: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '5px',
+  },
+  button: {
+    padding: '10px 20px',
+    fontSize: '1rem',
+    backgroundColor: '#007BFF',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+  },
+  error: {
+    color: 'red',
+    fontSize: '0.9rem',
+    marginTop: '5px',
+  },
+};
 
 export default App;
