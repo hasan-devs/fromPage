@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -15,7 +15,7 @@ const schema = yup.object().shape({
   email: yup.string().email('Invalid email').required('Email is required'),
   phoneNumber: yup
     .string()
-    .matches(/^\d{11}$/, 'Phone number must be 11 digits')
+    .matches(/^\d{10}$/, 'Phone number must be 10 digits')
     .required('Phone number is required'),
   houseType: yup.string().required('House type is required'),
   bedrooms: yup
@@ -73,7 +73,7 @@ function App() {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.heading}>Hashoo Properties Limited - Investor/Buyer Query Form</h1>
+      <h1 style={styles.heading}>House Inquiry Form</h1>
       <form onSubmit={handleSubmit(onSubmit)} style={styles.form}>
         {/* Name */}
         <div style={styles.formGroup}>
@@ -205,51 +205,60 @@ function App() {
           Submit
         </button>
       </form>
-        {/* Footer */}
-        <footer style={styles.footer}>
-        <h3>FOR BOOKING & INFORMATION</h3>
-        <p>UAN: +92 304 111 22 91</p>
-        <p>INFO@HASHOOPROPERTIES.COM</p>
-        <p>OFFICE: NESPAK HOUSE, ATATURK AVENUE, G-5/2, ISLAMABAD</p>
-        <p>WWW.HASHOOPROPERTIES.COM</p>
+
+      {/* Footer */}
+      <footer style={styles.footer}>
+        <h3 style={styles.footerHeading}>FOR BOOKING & INFORMATION</h3>
+        <p style={styles.footerText}>UAN: +92 304 111 22 91</p>
+        <p style={styles.footerText}>INFO@HASHOOPROPERTIES.COM</p>
+        <p style={styles.footerText}>
+          OFFICE: NESPAK HOUSE, ATATURK AVENUE, G-5/2, ISLAMABAD
+        </p>
+        <p style={styles.footerText}>WWW.HASHOOPROPERTIES.COM</p>
       </footer>
-      <p>Thank you for your interest in Hashoo Properties (PVT) limited</p>
     </div>
   );
 }
 
-// Responsive styles
+// Minimalist styles
 const styles = {
   container: {
     padding: '20px',
     maxWidth: '800px',
     margin: 'auto',
     fontFamily: 'Arial, sans-serif',
+    backgroundColor: '#ffffff',
+    borderRadius: '8px',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
   },
   heading: {
     textAlign: 'center',
     fontSize: '2rem',
     marginBottom: '20px',
+    color: '#333',
   },
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '15px',
+    gap: '20px',
   },
   formGroup: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '5px',
+    gap: '8px',
   },
   label: {
-    fontWeight: 'bold',
+    fontWeight: '600',
     fontSize: '1rem',
+    color: '#555',
   },
   input: {
     padding: '10px',
     fontSize: '1rem',
     borderRadius: '5px',
-    border: '1px solid #ccc',
+    border: '1px solid #ddd',
+    backgroundColor: '#f9f9f9',
+    color: '#333',
   },
   checkboxGroup: {
     display: 'flex',
@@ -259,7 +268,7 @@ const styles = {
   checkboxItem: {
     display: 'flex',
     alignItems: 'center',
-    gap: '5px',
+    gap: '8px',
   },
   radioGroup: {
     display: 'flex',
@@ -268,19 +277,20 @@ const styles = {
   radioItem: {
     display: 'flex',
     alignItems: 'center',
-    gap: '5px',
+    gap: '8px',
   },
   button: {
-    padding: '10px 20px',
+    padding: '12px 20px',
     fontSize: '1rem',
     backgroundColor: '#007BFF',
     color: '#fff',
     border: 'none',
     borderRadius: '5px',
     cursor: 'pointer',
+    transition: 'background-color 0.3s ease',
   },
   error: {
-    color: 'red',
+    color: '#ff4d4f',
     fontSize: '0.9rem',
     marginTop: '5px',
   },
@@ -289,7 +299,18 @@ const styles = {
     padding: '20px',
     backgroundColor: '#f4f4f4',
     textAlign: 'center',
-    borderTop: '1px solid #ccc',
+    borderTop: '1px solid #ddd',
+    borderRadius: '0 0 8px 8px',
+  },
+  footerHeading: {
+    fontSize: '1.2rem',
+    color: '#333',
+    marginBottom: '10px',
+  },
+  footerText: {
+    fontSize: '0.9rem',
+    color: '#555',
+    margin: '5px 0',
   },
 };
 
