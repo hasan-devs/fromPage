@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -15,7 +15,7 @@ const schema = yup.object().shape({
   email: yup.string().email('Invalid email').required('Email is required'),
   phoneNumber: yup
     .string()
-    .matches(/^\d{10}$/, 'Phone number must be 10 digits')
+    .matches(/^\d{11}$/, 'Phone number must be 11 digits')
     .required('Phone number is required'),
   houseType: yup.string().required('House type is required'),
   bedrooms: yup
@@ -73,7 +73,7 @@ function App() {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.heading}>House Inquiry Form</h1>
+      <h1 style={styles.heading}>Hashoo Properties Limited - Investor/Buyer Query Form</h1>
       <form onSubmit={handleSubmit(onSubmit)} style={styles.form}>
         {/* Name */}
         <div style={styles.formGroup}>
@@ -205,6 +205,15 @@ function App() {
           Submit
         </button>
       </form>
+        {/* Footer */}
+        <footer style={styles.footer}>
+        <h3>FOR BOOKING & INFORMATION</h3>
+        <p>UAN: +92 304 111 22 91</p>
+        <p>INFO@HASHOOPROPERTIES.COM</p>
+        <p>OFFICE: NESPAK HOUSE, ATATURK AVENUE, G-5/2, ISLAMABAD</p>
+        <p>WWW.HASHOOPROPERTIES.COM</p>
+      </footer>
+      <p>Thank you for your interest in Hashoo Properties (PVT) limited</p>
     </div>
   );
 }
@@ -274,6 +283,13 @@ const styles = {
     color: 'red',
     fontSize: '0.9rem',
     marginTop: '5px',
+  },
+  footer: {
+    marginTop: '40px',
+    padding: '20px',
+    backgroundColor: '#f4f4f4',
+    textAlign: 'center',
+    borderTop: '1px solid #ccc',
   },
 };
 
