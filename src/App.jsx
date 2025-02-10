@@ -73,7 +73,7 @@ function App() {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.heading}>House Inquiry Form</h1>
+      <h1 style={styles.heading}>Hashoo Properties Limited - Investor/Buyer Query Form</h1>
       <form onSubmit={handleSubmit(onSubmit)} style={styles.form}>
         {/* Name */}
         <div style={styles.formGroup}>
