@@ -323,7 +323,7 @@ const styles = {
     margin: '5px 0',
   }, 
   logo: {
-    width: '150px', // Adjust the size of the logo
+    width: '80px', // Adjust the size of the logo
     height: 'auto',
   },
 };
