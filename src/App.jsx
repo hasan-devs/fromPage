@@ -73,8 +73,17 @@ function App() {
 
   return (
     <div style={styles.container}>
+    {/* Header with Logo and Title */}
+    <header style={styles.header}>
+      <img
+        src="logo.png" // Path to your logo in the public folder
+        alt="Logo"
+        style={styles.logo}
+      />
       <h1 style={styles.heading}>Hashoo Properties Limited</h1>
       <h2 style={styles.heading}>Investor/Buyer Query Form</h2>
+    </header>
+
       <form onSubmit={handleSubmit(onSubmit)} style={styles.form}>
         {/* Name */}
         <div style={styles.formGroup}>
@@ -312,6 +321,10 @@ const styles = {
     fontSize: '0.9rem',
     color: '#555',
     margin: '5px 0',
+  }, 
+  logo: {
+    width: '150px', // Adjust the size of the logo
+    height: 'auto',
   },
 };
 
