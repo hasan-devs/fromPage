@@ -81,7 +81,7 @@ function App() {
         style={styles.logo}
       />
       <h1 style={styles.heading}>Hashoo Properties Limited</h1>
-      <h2 style={styles.heading}>Investor/Buyer Query Form</h2>
+      <h3 style={styles.heading}>Investor/Buyer Query Form</h3>
     </header>
 
       <form onSubmit={handleSubmit(onSubmit)} style={styles.form}>
@@ -215,7 +215,7 @@ function App() {
         </button>
       </form>
 
-          <h3 style={styles.heading}>Thank you for your interest in Hashoo Properties (PVT )Limited!</h3>
+          <p style={{textAlign: 'center'}}>Thank you for your interest in Hashoo Properties (PVT )Limited!</p>
       {/* Footer */}
       <footer style={styles.footer}>
         <h3 style={styles.footerHeading}>FOR BOOKING & INFORMATION</h3>
