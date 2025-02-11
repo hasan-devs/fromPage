@@ -111,7 +111,7 @@ function App() {
       </div> */}
       <header style={{textAlign: 'center'}}>
       <h1 style={styles.heading}>Hashoo Properties Limited</h1>
-      <h3 style={styles.heading}>Investor/Buyer Query Form</h3>
+      <h3 style={{textAlign:'center'}}>Investor/Buyer Query Form</h3>
     </header>
 
       <form onSubmit={handleSubmit(onSubmit)} style={styles.form}>
