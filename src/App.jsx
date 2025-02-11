@@ -80,7 +80,7 @@ function App() {
         alt="Logo"
         style={styles.logo}
       />
-      <div style={{display: 'flex', justifyContent: 'center', gap: '50px'}}>
+      <div style={{display: 'flex', justifyContent: 'space-between'}}>
         <img
           src="hashoo.png" // Path to your logo in the public folder
           alt="Logo"
@@ -339,7 +339,7 @@ const styles = {
     margin: '5px 0',
   }, 
   logo: {
-    width: '150px', // Adjust the size of the logo
+    width: '250px', // Adjust the size of the logo
     height: 'auto',
   },
 };
