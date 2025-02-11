@@ -75,15 +75,24 @@ function App() {
   return (
     <div style={styles.container}>
    
-    <div style={{display: 'flex', justifyContent: 'center'}}>
+    {/* <div style={{display: 'flex', justifyContent: 'center'}}>
 
       <img
         src="BBinsightslogo.png" // Path to your logo in the public folder
         alt="Logo"
+        className='bbLogo'
+        />
+    </div> */}
+
+    <div style={{display: 'flex', justifyContent: 'center'}}>
+      <img
+        src="banner.png" // Path to your logo in the public folder
+        alt="banner"
         className='logo'
         />
-        </div>
-      <div style={styles.logoContainer}>
+    </div>
+
+      {/* <div style={styles.logoContainer}>
         <img
           src="hashoo.png" // Path to your logo in the public folder
           alt="Logo"
@@ -99,7 +108,7 @@ function App() {
           alt="Logo"
           style={styles.logo}
         />
-      </div>
+      </div> */}
       <header style={{textAlign: 'center'}}>
       <h1 style={styles.heading}>Hashoo Properties Limited</h1>
       <h3 style={styles.heading}>Investor/Buyer Query Form</h3>
@@ -257,7 +266,8 @@ const styles = {
     maxWidth: '800px',
     margin: 'auto',
     fontFamily: 'Arial, sans-serif',
-    backgroundColor: '#ffffff',
+    backgroundColor: 'black',
+    color: 'white',
     borderRadius: '8px',
     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
   },
@@ -265,7 +275,7 @@ const styles = {
     textAlign: 'center',
     fontSize: '2rem',
     marginBottom: '20px',
-    color: '#333',
+    color: 'white',
   },
   form: {
     display: 'flex',
@@ -280,7 +290,7 @@ const styles = {
   label: {
     fontWeight: '600',
     fontSize: '1rem',
-    color: '#555',
+    color: 'white',
   },
   input: {
     padding: '10px',

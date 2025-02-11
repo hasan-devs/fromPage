@@ -15,9 +15,16 @@
     margin-bottom: 20px;
     color: #333;
   }
+  .bbLogo{
+    
+    width: 250px;
+    height: auto;
+    margin: 10px;
+
+  }
   
   .logo {
-    width: 250px;
+    width: 100%;
     height: auto;
     margin: 10px;
   }
@@ -28,14 +35,16 @@
     align-items: center;
     flex-wrap: wrap;
   }
+  /*
   
-  /* Media query for screens less than 600px */
+  
   @media (max-width: 600px) {
     .logo {
-      width: 80px; /* Adjust logo size for mobile */
+      width: 80px;
     }
   
     .logoContainer {
-      flex-direction: column; /* Stack logos vertically */
+      flex-direction: column;
     }
   }
+  */
