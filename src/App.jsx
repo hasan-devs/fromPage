@@ -297,8 +297,8 @@ const styles = {
     fontSize: '1rem',
     borderRadius: '5px',
     border: '1px solid #ddd',
-    backgroundColor: '#f9f9f9',
-    color: '#333',
+    backgroundColor: 'black',
+    color: 'white',
   },
   checkboxGroup: {
     display: 'flex',
