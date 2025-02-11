@@ -74,12 +74,29 @@ function App() {
   return (
     <div style={styles.container}>
     {/* Header with Logo and Title */}
-    <header style={styles.header}>
+    <header style={{textAlign: 'center'}}>
       <img
-        src="logo.png" // Path to your logo in the public folder
+        src="BBinsightslogo.png" // Path to your logo in the public folder
         alt="Logo"
         style={styles.logo}
       />
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+        <img
+          src="hashoo.png" // Path to your logo in the public folder
+          alt="Logo"
+          style={styles.logo}
+        />
+        <img
+          src="PCvilla.png" // Path to your logo in the public folder
+          alt="Logo"
+          style={styles.logo}
+        />
+        <img
+          src="PVC.png" // Path to your logo in the public folder
+          alt="Logo"
+          style={styles.logo}
+        />
+      </div>
       <h1 style={styles.heading}>Hashoo Properties Limited</h1>
       <h3 style={styles.heading}>Investor/Buyer Query Form</h3>
     </header>
@@ -138,7 +155,6 @@ function App() {
               'Solar System',
               'Kitchen Accessories',
               'Security System',
-              'Gym',
               'Park',
               'Water Filtration System',
               'Other',
