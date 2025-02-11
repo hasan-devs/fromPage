@@ -15,7 +15,7 @@ const schema = yup.object().shape({
   email: yup.string().email('Invalid email').required('Email is required'),
   phoneNumber: yup
     .string()
-    .matches(/^\d{10}$/, 'Phone number must be 10 digits')
+    .matches(/^\d{11}$/, 'Phone number must be 11 digits')
     .required('Phone number is required'),
   houseType: yup.string().required('House type is required'),
   bedrooms: yup
@@ -73,14 +73,16 @@ function App() {
 
   return (
     <div style={styles.container}>
-    {/* Header with Logo and Title */}
-    <header style={{textAlign: 'center'}}>
+   
+    <div style={{display: 'flex', justifyContent: 'center'}}>
+
       <img
         src="BBinsightslogo.png" // Path to your logo in the public folder
         alt="Logo"
         style={styles.logo}
-      />
-      <div style={{display: 'flex', justifyContent: 'space-between', maxWidth: '800px', margin: 'auto'}}>
+        />
+        </div>
+      <div style={styles.logoContainer}>
         <img
           src="hashoo.png" // Path to your logo in the public folder
           alt="Logo"
@@ -97,6 +99,7 @@ function App() {
           style={styles.logo}
         />
       </div>
+      <header style={{textAlign: 'center'}}>
       <h1 style={styles.heading}>Hashoo Properties Limited</h1>
       <h3 style={styles.heading}>Investor/Buyer Query Form</h3>
     </header>
@@ -341,6 +344,20 @@ const styles = {
   logo: {
     width: '250px', // Adjust the size of the logo
     height: 'auto',
+  },
+  logoContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexWrap: 'wrap', // Allow logos to wrap on smaller screens
+  },
+  '@media (max-width: 600px)': {
+    logo: {
+      width: '150px', // Adjust the size of the logo for mobile screens
+    },
+    logoContainer: {
+      flexDirection: 'column', // Stack logos vertically on mobile screens
+    },
   },
 };
 
