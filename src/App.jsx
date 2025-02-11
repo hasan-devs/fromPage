@@ -15,9 +15,13 @@ const schema = yup.object().shape({
   name: yup.string().required('Name is required'),
   email: yup.string().email('Invalid email').required('Email is required'),
   phoneNumber: yup
-    .string()
-    .matches(/^\d{11}$/, 'Phone number must be 11 digits')
-    .required('Phone number is required'),
+  .string()
+  .matches(/^\d+$/, 'Phone number must be numeric')
+  .length(11, 'Phone number must be exactly 11 digits')
+  .required('Phone number is required'),
+  // .string()
+  // .matches(/^\d{11}$/, 'Phone number must be 11 digits')
+  // .required('Phone number is required'),
   houseType: yup.string().required('House type is required'),
   bedrooms: yup
     .number()
@@ -132,7 +136,7 @@ function App() {
         {/* Phone Number */}
         <div style={styles.formGroup}>
           <label style={styles.label}>Phone Number</label>
-          <input {...register('phoneNumber')} style={styles.input} />
+          <input {...register('phoneNumber')} style={styles.input} inputMode="numeric" pattern="[0-9]*" />
           {errors.phoneNumber && (
             <p style={styles.error}>{errors.phoneNumber.message}</p>
           )}
