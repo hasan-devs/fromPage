@@ -75,14 +75,14 @@ function App() {
   return (
     <div style={styles.container}>
    
-    {/* <div style={{display: 'flex', justifyContent: 'center'}}>
+    <div style={{display: 'flex', justifyContent: 'center'}}>
 
       <img
         src="BBinsightslogo.png" // Path to your logo in the public folder
         alt="Logo"
         className='bbLogo'
         />
-    </div> */}
+    </div>
 
     <div style={{display: 'flex', justifyContent: 'center'}}>
       <img
