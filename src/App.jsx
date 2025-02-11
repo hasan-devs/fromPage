@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { createClient } from '@supabase/supabase-js';
+import './App.css';
 
 // Initialize Supabase client
 const supabaseUrl = 'https://kxxapucmizjwjcutxiav.supabase.co';
@@ -79,19 +80,19 @@ function App() {
       <img
         src="BBinsightslogo.png" // Path to your logo in the public folder
         alt="Logo"
-        style={styles.logo}
+        className='logo'
         />
         </div>
       <div style={styles.logoContainer}>
         <img
           src="hashoo.png" // Path to your logo in the public folder
           alt="Logo"
-          style={styles.logo}
+          className='logo'
         />
         <img
           src="PCvilla.png" // Path to your logo in the public folder
           alt="Logo"
-          style={styles.logo}
+          className='logo'
         />
         <img
           src="PVC.png" // Path to your logo in the public folder
@@ -342,7 +343,7 @@ const styles = {
     margin: '5px 0',
   }, 
   logo: {
-    width: '250px', // Adjust the size of the logo
+    width: '200px', // Adjust the size of the logo
     height: 'auto',
   },
   logoContainer: {
@@ -353,7 +354,7 @@ const styles = {
   },
   '@media (max-width: 600px)': {
     logo: {
-      width: '150px', // Adjust the size of the logo for mobile screens
+      width: '80px', // Adjust the size of the logo for mobile screens
     },
     logoContainer: {
       flexDirection: 'column', // Stack logos vertically on mobile screens
